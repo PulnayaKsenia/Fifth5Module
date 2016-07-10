@@ -3,20 +3,23 @@ package ua.goit.fifth;
 import java.util.Arrays;
 
 public class ArrayUtils {
-
     public static MinMaxPair getMinMax(int[] array) {
         int min = array[0];
         int max = array[0];
-                 for (int i = 0; i < array.length; i++) {
-                if (min > array[i])
-                    min = array[i];
-                if (max < array[i])
-                    max = array[i];
-                System.out.println("Minimum: " + min + ". Maximum: " + max);
+
+        for (int i = 0; i < array.length; i++) {
+            if (min > array[i]) {
+                min = array[i];
             }
-            return new MinMaxPair(min, max);
+            if (max < array[i]) {
+                max = array[i];
+            }
+        }
+        return new MinMaxPair(min, max);
     }
-    public static int[] sorting(int[] array,int length) {         //        used bubble sort
+
+    // used bubble sort
+    public static int[] sort(int[] array, int length) {
         int[] sort = Arrays.copyOf(array, length);
         boolean swapped = true;
         while (swapped) {
@@ -26,13 +29,12 @@ public class ArrayUtils {
                     int j = array[i];
                     array[i] = array[i + 1];
                     array[i + 1] = j;
+
                     swapped = true;
                 }
             }
         }
-        for (int element : array) {
-            System.out.println("Your sorted array's elements: " + element);
-        }
+
         return sort;
     }
 }
