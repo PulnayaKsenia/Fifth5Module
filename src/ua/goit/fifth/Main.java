@@ -17,32 +17,31 @@ public class Main {
 
         try {
             if (s.equals("User")) {
-                int[] minMaxPair = createArray(in);
+                int[] arrayUser = createArray(in);
 
                 System.out.println("Enter array's elements: ");
 
-                for (int i = 0; i < minMaxPair.length; i++) {
-                    minMaxPair[i] = in.nextInt();
+                for (int i = 0; i < arrayUser.length; i++) {
+                    arrayUser[i] = in.nextInt();
                 }
 
-                System.out.println("Sorted array: " + Arrays.toString(ArrayUtils.sort(minMaxPair)));
+                System.out.println("Sorted array: " + Arrays.toString(ArrayUtils.sort(arrayUser)));
 
-                MinMaxPair minMaxUser = ArrayUtils.getMinMax(minMaxPair);
-                System.out.println(minMaxUser);
+                MinMaxPair minMaxPair = ArrayUtils.getMinMax(arrayUser);
+                System.out.println(minMaxPair);
 
             } else if (s.equals("Random")) {
-                int[] minMax = createArray(in);
+                int[] arrayRandom = createArray(in);
                 Random random = new Random();
 
-                for (int i = 0; i < minMax.length; i++) {
-                    minMax[i] = random.nextInt(100);
-                    System.out.println("Your array's element: " + minMax[i]);
+                for (int i = 0; i < arrayRandom.length; i++) {
+                    arrayRandom[i] = random.nextInt(100);
                 }
 
-                System.out.println("Sorted array: " + Arrays.toString(ArrayUtils.sort(minMax)));
+                System.out.println("Sorted array: " + Arrays.toString(ArrayUtils.sort(arrayRandom)));
 
-                MinMaxPair minMaxRandom = ArrayUtils.getMinMax(minMax);
-                System.out.println(minMaxRandom);
+                MinMaxPair minMaxPair = ArrayUtils.getMinMax(arrayRandom);
+                System.out.println(minMaxPair);
 
             } else if (s.equals("Out")) {
                 System.exit(1);
