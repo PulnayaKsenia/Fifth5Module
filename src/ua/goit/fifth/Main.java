@@ -17,30 +17,31 @@ public class Main {
 
         try {
             if (s.equals("User")) {
-                int[] userArray = lengthArray(in);
+                int[] minMaxPair = createArray(in);
+
                 System.out.println("Enter array's elements: ");
 
-                for (int i = 0; i < userArray.length; i++) {
-                    userArray[i] = in.nextInt();
+                for (int i = 0; i < minMaxPair.length; i++) {
+                    minMaxPair[i] = in.nextInt();
                 }
 
-                System.out.println("Sorted array: " + Arrays.toString(ArrayUtils.sort(userArray, userArray.length)));
+                System.out.println("Sorted array: " + Arrays.toString(ArrayUtils.sort(minMaxPair)));
 
-                MinMaxPair minMaxUser = ArrayUtils.getMinMax(userArray);
+                MinMaxPair minMaxUser = ArrayUtils.getMinMax(minMaxPair);
                 System.out.println(minMaxUser);
 
             } else if (s.equals("Random")) {
-                int[] randomArray = lengthArray(in);
+                int[] minMax = createArray(in);
                 Random random = new Random();
 
-                for (int i = 0; i < randomArray.length; i++) {
-                    randomArray[i] = random.nextInt(100);
-                    System.out.println("Your array's element: " + randomArray[i]);
+                for (int i = 0; i < minMax.length; i++) {
+                    minMax[i] = random.nextInt(100);
+                    System.out.println("Your array's element: " + minMax[i]);
                 }
 
-                System.out.println("Sorted array: " + Arrays.toString(ArrayUtils.sort(randomArray, randomArray.length)));
+                System.out.println("Sorted array: " + Arrays.toString(ArrayUtils.sort(minMax)));
 
-                MinMaxPair minMaxRandom = ArrayUtils.getMinMax(randomArray);
+                MinMaxPair minMaxRandom = ArrayUtils.getMinMax(minMax);
                 System.out.println(minMaxRandom);
 
             } else if (s.equals("Out")) {
@@ -52,10 +53,12 @@ public class Main {
         }
     }
 
-    public static int[] lengthArray(Scanner in) {
+    public static int[] createArray(Scanner in) {
         System.out.println("Please, enter array's length: ");
+
         int n = in.nextInt();
         int[] array = new int[n];
+
         return array;
     }
 }

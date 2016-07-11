@@ -15,15 +15,18 @@ public class ArrayUtils {
                 max = array[i];
             }
         }
+
         return new MinMaxPair(min, max);
     }
 
     // used bubble sort
-    public static int[] sort(int[] array, int length) {
-        int[] sort = Arrays.copyOf(array, length);
+    public static int[] sort(int[] array) {
+        int[] sort = Arrays.copyOf(array, array.length);
         boolean swapped = true;
+
         while (swapped) {
             swapped = false;
+
             for (int i = 0; i < array.length - 1; i++) {
                 if (array[i] > array[i + 1]) {
                     int j = array[i];

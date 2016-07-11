@@ -29,6 +29,6 @@ public class MinMaxPair {
     public String toString() {
         return "Minimum: " + min +
                 ". Maximum: " + max +
-                ' ';
+                '.';
     }
 }
